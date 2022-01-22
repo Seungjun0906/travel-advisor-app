@@ -5,6 +5,7 @@ import { LocationOnOutlined } from "@material-ui/icons";
 import { Rating } from "@material-ui/lab";
 
 import useStyles from "./styles";
+import mapStyles from "./mapStyles";
 
 const GOOGLEMAP_KEY = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
 
@@ -24,7 +25,11 @@ const Map = ({ setCoords, setBounds, coords, places, setChildClicked }) => {
         center={coords}
         defaultZoom={14}
         margin={[50, 50, 50, 50]}
-        options={""}
+        options={{
+          disableDefaultUI: true,
+          zoomControl: true,
+          styles: { mapStyles },
+        }}
         onChange={(e) => {
           setCoords({ lat: e.center.lat, lng: e.center.lng });
           setBounds({ ne: e.marginBounds.ne, sw: e.marginBounds.sw });
