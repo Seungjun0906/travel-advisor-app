@@ -6,7 +6,7 @@ import { Rating } from "@material-ui/lab";
 
 import useStyles from "./styles";
 
-const GOOGLEMAP_KEY = "AIzaSyALTV7MHPMYfjpFZ2-PjPxgE5fMJabAeE4";
+const GOOGLEMAP_KEY = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
 
 const Map = ({ setCoords, setBounds, coords, places, setChildClicked }) => {
   const classes = useStyles();

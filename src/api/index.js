@@ -11,7 +11,7 @@ const getPlacesData = async (sw, ne, type) => {
       },
       headers: {
         "x-rapidapi-host": "travel-advisor.p.rapidapi.com",
-        "x-rapidapi-key": "3883905021mshc654b899be3c9cfp192f92jsn36e4d6fdf2f9",
+        "x-rapidapi-key": process.env.REACT_APP_RAPIDAPI_API_KEY,
       },
     };
     const { data } = await axios.get(
